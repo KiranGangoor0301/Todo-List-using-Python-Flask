@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block body %}
+    <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <form method="POST" action="/">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"><h4>Add Todo's</h4></label>
+              <input type="text" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" name="title" required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"><h4>Description</h4></label>
+              <input type="text" class="form-control" id="exampleInputPassword1" name="desc" required>
+            </div>
+            <button type="submit" class="btn btn-outline-dark "><strong>Submit</strong></button>
+          </form>
+        </div>
+        <h1 style="margin:50px auto;width: 1322px;">Your Todos</h1>
+      
+        {% if alltodo|length==0  %}
+        <div class="alert alert-dark" role="alert">
+          <h4 style="text-align: center;">No Todos found.Add Your Todos now!</h4>
+        </div>
+          
+        {% else %}
+          
+         
+        <div class="table" style="width: 1322px;margin: auto;">
+        <table class="table table-striped" id="tableSearch">
+            <thead>
+                <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Update/Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for todo in alltodo %}
+                 <tr>
+                  <th scope="row">{{loop.index}}</th>
+                  <td>{{todo.title}}</td>
+                  <td>{{todo.desc}}</td>
+                  <td>{{todo.Time}}</td>
+                  <td>
+                    <a href="/update/{{todo.sno}}"><button class="btn btn-dark mx-1">Update</button></a>
+                  <a href="/delete/{{todo.sno}}"><button class="btn btn-dark mx-1">Delete</button></a>
+                </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+        </div>
+        {% endif %}
+        {% endblock body %}

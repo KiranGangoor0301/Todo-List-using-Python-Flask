@@ -1,0 +1,143 @@
+nav {
+    background-color: #000;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 80px;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f8b739;
+  }
+  
+  nav ul li.search form {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li.search input[type="text"] {
+    height: 30px;
+    width: 150px;
+    border-radius: 20px;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li.search input[type="text"]:focus {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav ul li.search button[type="submit"] {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #f8b739;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li.search button[type="submit"]:hover {
+    background-color: #333;
+  }
+  .container
+  {
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+  }
+ 
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+  nav {
+    height: 60px;
+  }
+  
+  nav ul li {
+    margin: 0 5px;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+    line-height: 60px;
+  }
+  
+  nav ul li.search input[type="text"] {
+    height: 20px;
+    width: 100px;
+    font-size: 14px;
+  }
+  
+  nav ul li.search button[type="submit"] {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .container {
+    margin-top: 80px;
+  }
+}
+
+/* Tablet and desktop styles */
+@media only screen and (min-width: 768px) {
+  nav {
+    height: 80px;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    font-size: 18px;
+    line-height: 80px;
+  }
+  
+  nav ul li.search input[type="text"] {
+    height: 30px;
+    width: 150px;
+    font-size: 16px;
+  }
+  
+  nav ul li.search button[type="submit"] {
+    height: 30px;
+    width: 30px;
+  }
+  
+  .container {
+    margin-top: 100px;
+  }
+}
